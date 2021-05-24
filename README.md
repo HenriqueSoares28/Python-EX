@@ -1,2 +1,0 @@
-# Python-EX
-Learning Python
