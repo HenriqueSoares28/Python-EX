@@ -10,10 +10,8 @@ while True:
         else:
             print('ERRO! Responda apenas M ou F')
     dici['idade'] = int(input('Idade: '))
-    print(dici)
-    lista.append(dici)
-
-    
+    lista.append(dici.copy())
+ 
     while True:
         cont = str(input('Quer continuar? [S/N] '))
         if cont in 'NnSs':
@@ -22,19 +20,21 @@ while True:
             print('ERRO! Responda apenas com S ou N.')
     if cont in ('Nn'):
         break
-print(lista)    
-'''print(lista)   
+     
 for c in range(len(lista)):
     soma += lista[c]['idade']
 cont = len(lista)
 media = soma / cont
-print(cont)
-print(soma)
 print('=-'*30)
 print(f'A) Ao todo temos {len(lista)} cadastradas.')   
 print(f'B) A média de idade é de {media:.2f} anos')
-#for c in range()
-print('C) AS mulheres cadastradas foram ',end='')
+print('C) As mulheres cadastradas foram: ',end='')
+for c in range(len(lista)):    
+    if lista[c]['sexo'] in 'F':
+        print(lista[c]['nome'], end=' ')
+print()
+print('D) Lista das pessoas que esttão acima da média:')
 for c in range(len(lista)):
-    print(lista[c])
-print()'''
+    if lista[c]['idade'] > media:
+        print(f'    nome = {lista[c]["nome"]}; sexo = {lista[c]["sexo"]}; idade = {lista[c]["idade"]}')
+print('<< ENCERRADO >>')
